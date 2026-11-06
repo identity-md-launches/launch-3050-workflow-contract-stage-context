@@ -1,0 +1,14 @@
+{
+  "kind": "evm_contracts",
+  "contracts": [
+    {
+      "contract": "HamsterBadge",
+      "constructorArgs": []
+    },
+    {
+      "contract": "WheelSpinCheckIn",
+      "constructorArgs": ["$contract:HamsterBadge"]
+    }
+  ],
+  "notes": "Deploy HamsterBadge first, then WheelSpinCheckIn with the deployed badge address as its immutable holder-gating dependency. HamsterBadge is the Hamster Badge (HBADGE) ERC-721 collection with a fixed maximum supply of 10,000 and one free mint per wallet. WheelSpinCheckIn records one spin per UTC day for badge holders, tracks wallet streaks and total check-ins, and maintains a leaderboard of the 100 longest streaks. Neither contract has an owner or admin, so no $owner argument is required. Both constructors are nonpayable; no deployment funding or initialization calls are required."
+}
